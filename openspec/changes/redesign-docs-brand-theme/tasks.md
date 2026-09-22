@@ -33,7 +33,7 @@
 
 ## 6. Verification and documentation
 
-- [ ] 6.1 Capture light and dark screenshots of the landing page, `guides/semantic-models`, and `reference/mcp-tools` from the built site with the Playwright Chromium in `apps/e2e` and attach before/after pairs to the PR; verify visually against archmax.ai: grey page with white surfaces, black pill CTA, no tree lines, no title rule, dark footer present.
+- [x] 6.1 Capture light and dark screenshots of the landing page, `guides/semantic-models`, and `reference/mcp-tools` from the built site with the Playwright Chromium in `apps/e2e` and attach before/after pairs to the PR; verify visually against archmax.ai: grey page with white surfaces, black pill CTA, no tree lines, no title rule, dark footer present.
 - [x] 6.2 Run `pnpm typecheck && pnpm lint` from the root and confirm both exit 0 with the workspace package removed and the npm dependency in place.
 - [x] 6.3 Add `apps/docs/src/content/docs/contributing/docs-theme.mdx` ("Docs theme": link to the theme repository, token layers, where to change a value, plugin options, how another archmax project installs the published package) and register it in the Contributing sidebar; verify the page appears in the sidebar and in Pagefind search in the built site.
 - [x] 6.4 Check README.md for statements about docs styling or fonts location and align them if any exist; verify with a grep for `public/fonts` and `custom.css` returning nothing.
