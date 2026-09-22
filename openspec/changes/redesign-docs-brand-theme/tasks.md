@@ -25,11 +25,11 @@
 
 ## 5. Split into its own repository and publish
 
-- [ ] 5.1 Create the public GitHub repository `archmax-ai/starlight-theme`, extract the package with `git subtree split --prefix packages/starlight-theme` and push it as `main`; verify the new repo passes standalone with `npm install && npm run typecheck && npm test`.
-- [ ] 5.2 Add `ci.yml` (typecheck and test on push and pull request) to the theme repo, modelled on `archmax-ai/harness`; verify the workflow file is valid and the first run is green.
-- [ ] 5.3 Tag `v0.1.0` on the theme repo's `main` and push the tag; verify `git ls-remote --tags` lists it.
-- [ ] 5.4 Replace the workspace dependency in `apps/docs/package.json` with `github:archmax-ai/starlight-theme#v0.1.0`, delete `packages/starlight-theme` and its Vitest project from this monorepo, run `pnpm install`, and rebuild; verify the built site's screenshots are pixel-identical to the workspace build.
-- [ ] 5.5 Write a hand-off note (issue in `archmax-ai/harness`) with the exact `astro.config.mjs` diff for adopting the theme in the Pangea SDK docs; verify the issue links to the theme repository README.
+- [x] 5.1 Create the public GitHub repository `archmax-ai/starlight-theme`, extract the package with `git subtree split --prefix packages/starlight-theme` and push it as `main`; verify the new repo passes standalone with `npm install && npm run typecheck && npm test`.
+- [x] 5.2 Add `ci.yml` (typecheck and test on push and pull request) to the theme repo, modelled on `archmax-ai/harness`; verify the workflow file is valid and the first run is green.
+- [x] 5.3 Tag `v0.1.0` on the theme repo's `main` and push the tag; verify `git ls-remote --tags` lists it.
+- [x] 5.4 Replace the workspace dependency in `apps/docs/package.json` with `github:archmax-ai/starlight-theme#v0.1.0`, delete `packages/starlight-theme` and its Vitest project from this monorepo, run `pnpm install`, and rebuild; verify the built site's screenshots are pixel-identical to the workspace build.
+- [x] 5.5 Write a hand-off note (issue in `archmax-ai/harness`) with the exact `astro.config.mjs` diff for adopting the theme in the Pangea SDK docs; verify the issue links to the theme repository README.
 
 ## 6. Verification and documentation
 
