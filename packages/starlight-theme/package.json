@@ -1,0 +1,57 @@
+{
+  "name": "@archmax-ai/starlight-theme",
+  "version": "0.1.0",
+  "description": "archmax brand theme for Astro Starlight documentation sites",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/archmax-ai/starlight-theme.git"
+  },
+  "homepage": "https://github.com/archmax-ai/starlight-theme#readme",
+  "keywords": [
+    "astro",
+    "starlight",
+    "starlight-theme",
+    "withastro",
+    "archmax"
+  ],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js"
+    },
+    "./components/*": "./components/*",
+    "./styles/*": "./styles/*",
+    "./brand/*": "./brand/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "virtual.d.ts",
+    "components",
+    "styles",
+    "brand",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "@astrojs/starlight": "^0.42.0",
+    "astro": "^7.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/starlight": "^0.42.0",
+    "@types/node": "^24.0.0",
+    "astro": "^7.3.2",
+    "typescript": "7.0.2",
+    "vitest": "^4.1.10"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

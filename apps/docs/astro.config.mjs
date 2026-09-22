@@ -1,15 +1,19 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import starlightImageZoom from "starlight-image-zoom";
+import { archmaxTheme } from "@archmax-ai/starlight-theme";
 
 export default defineConfig({
   site: "https://semantics.archmax.ai",
   integrations: [
     starlight({
-      plugins: [starlightImageZoom()],
-      components: {
-        SiteTitle: "./src/components/SiteTitle.astro",
-      },
+      plugins: [
+        archmaxTheme({
+          product: "semantics",
+          links: { github: "https://github.com/archmax-ai/semantics" },
+        }),
+        starlightImageZoom(),
+      ],
       title: "archmax semantics",
       logo: {
         light: "./src/assets/logo-light.svg",
@@ -19,12 +23,6 @@ export default defineConfig({
       },
       description:
         "Manage semantic descriptions of your databases and expose them to AI agents via MCP.",
-      expressiveCode: {
-        styleOverrides: {
-          borderRadius: "0.75rem",
-          borderWidth: "0px",
-        },
-      },
       social: [
         {
           icon: "github",
@@ -68,10 +66,10 @@ export default defineConfig({
           items: [
             { label: "Development Setup", slug: "contributing/development" },
             { label: "OpenSpec Workflow", slug: "contributing/openspec" },
+            { label: "Docs Theme", slug: "contributing/docs-theme" },
           ],
         },
       ],
-      customCss: ["./src/styles/custom.css"],
     }),
   ],
 });

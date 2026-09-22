@@ -26,6 +26,13 @@ export default defineConfig({
       },
       {
         test: {
+          name: "starlight-theme",
+          root: "packages/starlight-theme",
+          include: ["*.test.ts"],
+        },
+      },
+      {
+        test: {
           name: "worker",
           root: "apps/worker",
           include: ["src/**/*.test.ts"],

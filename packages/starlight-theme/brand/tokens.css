@@ -1,0 +1,99 @@
+/*
+ * archmax brand tokens.
+ * Values mirror the archmax website (archmax_website/src/app/globals.css) as HSL triplets.
+ * This file has no framework dependency: only custom properties and font faces.
+ */
+
+@font-face {
+  font-family: "Geist Sans";
+  src: url("./fonts/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("./fonts/GeistMono-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Light theme (default). Content surfaces are plain white, the page background is grey. */
+:root {
+  --radius: 0.625rem;
+  --background: 0 0% 96%;
+  --foreground: 0 0% 8%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 8%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 8%;
+  --primary: 0 0% 0%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 257 12% 14%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 92%;
+  --muted-foreground: 0 0% 40%;
+  --accent: 257 17% 93%;
+  --accent-foreground: 257 12% 36%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 88%;
+  --input: 0 0% 88%;
+  --ring: 257 17% 55%;
+
+  --font-sans: "Geist Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+
+  /* ci-palette: constant across themes, used for the footer dots and categorical color. */
+  --ci-1: #8c987f;
+  --ci-2: #a69d85;
+  --ci-3: #bca195;
+  --ci-4: #c9a9ac;
+  --ci-5: #ccb4c5;
+  --ci-6: #c8c1d9;
+  --ci-7: #c2d0e4;
+
+  /* Gradient stops: light palette on light, muted dark palette on dark. */
+  --gradient-1: var(--ci-1);
+  --gradient-2: var(--ci-2);
+  --gradient-3: var(--ci-3);
+  --gradient-4: var(--ci-4);
+  --gradient-5: var(--ci-5);
+  --gradient-6: var(--ci-6);
+  --gradient-7: var(--ci-7);
+}
+
+/* Dark theme. Content surfaces are near black, the page background is dark grey. */
+:root[data-theme="dark"],
+.dark,
+.archmax-dark {
+  --background: 0 0% 12%;
+  --foreground: 0 0% 95%;
+  --card: 0 0% 4%;
+  --card-foreground: 0 0% 95%;
+  --popover: 0 0% 4%;
+  --popover-foreground: 0 0% 95%;
+  --primary: 257 17% 72%;
+  --primary-foreground: 257 12% 8%;
+  --secondary: 257 12% 14%;
+  --secondary-foreground: 0 0% 95%;
+  --muted: 0 0% 18%;
+  --muted-foreground: 0 0% 65%;
+  --accent: 257 12% 17%;
+  --accent-foreground: 257 17% 72%;
+  --destructive: 0 62% 54%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 257 17% 65%;
+
+  --gradient-1: #3b4035;
+  --gradient-2: #464238;
+  --gradient-3: #4f443f;
+  --gradient-4: #544748;
+  --gradient-5: #564c53;
+  --gradient-6: #54515b;
+  --gradient-7: #515760;
+}

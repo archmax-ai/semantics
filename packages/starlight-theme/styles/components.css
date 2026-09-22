@@ -1,0 +1,311 @@
+/*
+ * archmax chrome for Starlight: borderless surfaces, pill navigation, semibold typography.
+ * Rules are unlayered on purpose so they win over Starlight's `@layer starlight.*` styles
+ * without `!important`.
+ */
+
+/* ─── Typography ─── */
+
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+.sl-markdown-content strong:not(:where(.not-content *)),
+.sl-markdown-content th:not(:where(.not-content *)),
+.sl-markdown-content summary:not(:where(.not-content *)) {
+  font-weight: 600;
+}
+.sl-markdown-content :is(h1, h2):not(:where(.not-content *)) {
+  margin-top: 2.5rem;
+}
+.sl-markdown-content h1:not(:where(.not-content *)) {
+  font-size: var(--sl-text-h1);
+}
+
+/* ─── Header ─── */
+
+.page > .header {
+  background-color: hsl(var(--background) / 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: none;
+}
+.header .social-icons::after {
+  display: none;
+}
+
+/* ─── Search ─── */
+
+@media (min-width: 50rem) {
+  button[data-open-modal] {
+    border-radius: 9999px;
+    border: none;
+    background-color: hsl(var(--card));
+    color: hsl(var(--muted-foreground));
+    transition: background-color 0.15s;
+  }
+  button[data-open-modal]:hover {
+    background-color: color-mix(in srgb, hsl(var(--card)) 60%, hsl(var(--muted)));
+  }
+  :root[data-theme="dark"] button[data-open-modal] {
+    background-color: hsl(var(--muted));
+  }
+  :root[data-theme="dark"] button[data-open-modal]:hover {
+    background-color: color-mix(in srgb, hsl(var(--muted)) 70%, hsl(var(--foreground)) 30%);
+  }
+}
+dialog {
+  border-radius: 0.75rem;
+  border: none;
+}
+#starlight__search .pagefind-ui__search-input {
+  border-radius: 9999px;
+}
+
+/* ─── Sidebar ─── */
+
+.sidebar-pane {
+  border-inline-end: none;
+}
+.sidebar-content ul ul li {
+  border-inline-start: none;
+  margin-inline-start: 0.25rem;
+  padding-inline-start: 0.25rem;
+}
+.sidebar-content .top-level > li + li {
+  margin-top: 1rem;
+}
+.sidebar-content summary {
+  padding: 0.35rem 0.75rem;
+}
+.sidebar-content .large {
+  font-size: var(--sl-text-base);
+  font-weight: 600;
+  color: var(--sl-color-white);
+}
+.sidebar-content a {
+  border-radius: 9999px;
+  padding: 0.35rem 0.75rem;
+  color: var(--sl-color-gray-3);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: background-color 0.15s, color 0.15s;
+}
+.sidebar-content a:hover,
+.sidebar-content a:focus-visible {
+  color: var(--sl-color-white);
+  background-color: hsl(var(--foreground) / 0.05);
+}
+.sidebar-content a[aria-current="page"],
+.sidebar-content a[aria-current="page"]:hover,
+.sidebar-content a[aria-current="page"]:focus {
+  color: var(--sl-color-white);
+  background-color: hsl(var(--muted));
+  font-weight: 600;
+}
+
+/* ─── Table of contents ─── */
+
+.right-sidebar {
+  border-inline-start: none;
+}
+mobile-starlight-toc nav {
+  border-bottom: none;
+  background-color: hsl(var(--background) / 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ─── Content column ─── */
+
+.content-panel + .content-panel {
+  border-top: none;
+  padding-top: 0.5rem;
+}
+:root:not([data-has-sidebar]) .main-frame {
+  overflow-x: clip;
+}
+
+/* ─── Links ─── */
+
+.sl-markdown-content a:not(:where(.not-content *)) {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--sl-color-text-accent) 40%, transparent);
+  text-underline-offset: 0.2em;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+.sl-markdown-content a:hover:not(:where(.not-content *)) {
+  text-decoration-color: currentColor;
+}
+
+/* ─── Inline code, blockquotes ─── */
+
+.sl-markdown-content code:not(:where(.not-content *)) {
+  border-radius: 0.375rem;
+  font-size: 0.875em;
+}
+.sl-markdown-content blockquote:not(:where(.not-content *)) {
+  border-inline-start-width: 2px;
+  border-color: hsl(var(--border));
+  color: var(--sl-color-gray-3);
+}
+
+/* ─── Asides ─── */
+
+.starlight-aside {
+  border-radius: 0.75rem;
+  border-inline-start: none;
+  padding: 1rem 1.25rem;
+}
+
+/* ─── Cards ─── */
+
+.card {
+  border: none;
+  border-radius: 0.75rem;
+  background-color: hsl(var(--card));
+  padding: 1.5rem;
+}
+.card .title {
+  font-size: var(--sl-text-lg);
+  letter-spacing: -0.025em;
+}
+.card .icon {
+  border: none;
+  border-radius: 9999px;
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+  padding: 0.45em;
+  box-sizing: content-box;
+}
+.card .body {
+  color: var(--sl-color-gray-2);
+  font-size: var(--sl-text-base);
+}
+.card code {
+  background-color: hsl(var(--muted));
+}
+.sl-link-card {
+  border: none;
+  box-shadow: none;
+  border-radius: 0.75rem;
+  background-color: hsl(var(--card));
+}
+.sl-link-card:hover {
+  background-color: color-mix(in srgb, hsl(var(--card)) 60%, hsl(var(--muted)));
+}
+
+/* ─── Pagination ─── */
+
+.pagination-links a {
+  border: none;
+  box-shadow: none;
+  border-radius: 0.75rem;
+  background-color: hsl(var(--card));
+  color: var(--sl-color-gray-3);
+  transition: background-color 0.15s;
+}
+.pagination-links a:hover {
+  background-color: color-mix(in srgb, hsl(var(--card)) 60%, hsl(var(--muted)));
+}
+.pagination-links .link-title {
+  font-size: var(--sl-text-lg);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+/* ─── Screenshot gallery ─── */
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+@media (max-width: 50rem) {
+  .screenshot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 30rem) {
+  .screenshot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.screenshot-grid figure {
+  margin: 0;
+  padding: 0.5rem;
+  background-color: hsl(var(--card));
+  border-radius: 0.75rem;
+}
+.screenshot-grid figure img {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+}
+.screenshot-grid figcaption {
+  text-align: center;
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-3);
+  margin-top: 0.5rem;
+}
+
+/* ─── Steps strip ─── */
+
+.steps-strip {
+  list-style: none;
+  padding: 0;
+  margin-block: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  counter-reset: step;
+}
+@media (max-width: 50rem) {
+  .steps-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 30rem) {
+  .steps-strip {
+    grid-template-columns: 1fr;
+  }
+}
+.steps-strip > li {
+  counter-increment: step;
+  margin: 0;
+}
+.steps-strip > li > a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100%;
+  padding: 1.25rem;
+  background-color: hsl(var(--card));
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: var(--sl-color-gray-2);
+  transition: background-color 0.15s;
+}
+.steps-strip > li > a:hover {
+  background-color: color-mix(in srgb, hsl(var(--card)) 60%, hsl(var(--muted)));
+}
+.steps-strip > li > a::before {
+  content: "0" counter(step);
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-3);
+}
+.steps-strip strong {
+  font-weight: 600;
+  color: var(--sl-color-white);
+  letter-spacing: -0.025em;
+}
+
+/* ─── Focus ─── */
+
+:focus-visible {
+  outline-color: hsl(var(--ring));
+}

@@ -1,0 +1,79 @@
+---
+title: Docs Theme
+description: How the documentation site gets its look from the shared archmax Starlight theme, where to change a brand value, and how another project adopts it.
+---
+
+The documentation site is an [Astro Starlight](https://starlight.astro.build) project in `apps/docs`. Its visual identity does not live in this repository: it comes from the shared theme package [`@archmax-ai/starlight-theme`](https://github.com/archmax-ai/starlight-theme), which every archmax documentation site installs. This keeps the docs, the [archmax website](https://archmax.ai), and other product docs looking like one family.
+
+## How the theme is wired in
+
+`apps/docs/astro.config.mjs` lists the theme as a Starlight plugin:
+
+```js
+import { archmaxTheme } from "@archmax-ai/starlight-theme";
+
+starlight({
+  plugins: [
+    archmaxTheme({
+      product: "semantics",
+      links: { github: "https://github.com/archmax-ai/semantics" },
+    }),
+  ],
+  // ...
+});
+```
+
+The plugin registers three stylesheets, the self-hosted Geist fonts, and four component overrides (`SiteTitle`, `Header`, `Hero`, `Footer`). The docs app keeps no `customCss` and no `components` of its own. If you ever need a site-specific rule, add a `customCss` entry: it loads after the theme, so your rules win.
+
+## The two token layers
+
+The theme's CSS is split so the brand can travel to sites that are not built with Starlight.
+
+| Layer | File in the theme | What it holds |
+| --- | --- | --- |
+| Brand | `brand/tokens.css` | The archmax design tokens as HSL triplets with the same names and values as the website (`--background`, `--foreground`, `--card`, `--muted`, `--border`, `--primary`, `--accent`, `--ring`, `--radius`), the ci-palette, the gradient stops, and the Geist font faces. No Starlight selectors. |
+| Framework | `styles/starlight.css` and `styles/components.css` | Maps every Starlight `--sl-*` variable onto the brand tokens and styles Starlight's chrome: sidebar, header, cards, pagination, asides, code blocks, the screenshot gallery, and the steps strip. |
+
+To change a color, edit `brand/tokens.css` in the theme repository, tag a new version, and bump the pinned tag in `apps/docs/package.json`. Do not add color literals to `apps/docs`.
+
+## Design rules the theme enforces
+
+- Grey page, white content surfaces in light mode. Dark grey page, near-black surfaces in dark mode.
+- No borders on cards, code blocks, pagination, asides, or screenshots. Separation comes from background contrast first and spacing second.
+- Pill-shaped buttons and sidebar states. Primary calls to action are black in light mode and light in dark mode. The purple accent appears only on inline links, the active table-of-contents entry, and focus rings.
+- Geist Sans with a maximum weight of 600, tight letter spacing on headings, Geist Mono for eyebrows, badges, and footer meta text. Body text is at least 16 px.
+
+## Plugin options
+
+| Option | Default | Purpose |
+| --- | --- | --- |
+| `product` | none | Product name next to the archmax wordmark |
+| `version` | `APP_VERSION`, then `dev` | Version badge in the header. The docs deploy workflow sets `APP_VERSION` from the latest git tag. |
+| `tagline` | archmax tagline | Line under the wordmark in the footer |
+| `links.website` | `https://archmax.ai` | Header and footer link |
+| `links.github` | Starlight `social` GitHub entry | Footer link |
+| `links.imprint`, `links.privacy` | archmax legal pages | Footer legal links |
+| `copyrightHolder` | `archmax` | Footer copyright line |
+
+## Landing page building blocks
+
+The landing page (`index.mdx`) uses `template: splash` with a `hero` block. The theme renders `hero.tagline` as the monospace eyebrow, `hero.title` as the headline, the page `description` as the subtitle, and `hero.actions` as pill buttons. Two utility classes are available on any page: `.screenshot-grid` for a gallery of `<figure>` elements on card surfaces and `.steps-strip` for a numbered list of linked cards.
+
+## Using the theme in another project
+
+```bash
+pnpm add github:archmax-ai/starlight-theme#v0.1.0
+```
+
+The theme is installed from a Git tag of its repository; it is not on npm. Add `archmaxTheme({ product: "<name>" })` to the `plugins` array of your Starlight config and remove any `customCss` or `components` the theme now provides. The theme declares a peer dependency on `@astrojs/starlight`; keep both on versions the theme has been verified against, because the theme styles Starlight's internal class names.
+
+## Working on the theme locally
+
+Clone the theme repository next to this one and link it while iterating:
+
+```bash
+pnpm --filter @archmax/docs add @archmax-ai/starlight-theme@link:../starlight-theme
+pnpm --filter @archmax/docs dev
+```
+
+Revert the dependency to a release tag before opening a pull request.
