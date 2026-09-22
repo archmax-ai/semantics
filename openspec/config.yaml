@@ -35,6 +35,17 @@ context: |
 
   These colors are used for dataset group boxes in the graph view (with lightened bg tints and darkened border variants for readability) and should be preferred whenever a categorical color palette is needed.
 
+  ## Documentation Site Theming
+
+  The docs site (`apps/docs`) takes its whole visual identity from the shared Starlight plugin `@archmax-ai/starlight-theme` (repository `archmax-ai/starlight-theme`). Rules:
+
+  - No color literals, `customCss`, or component overrides in `apps/docs`. Brand values live in the theme's `brand/tokens.css` (HSL triplets identical to the archmax website); Starlight variables are derived from them in the theme's `styles/starlight.css`.
+  - Surfaces are borderless: grey page with white cards and code blocks in light mode, dark grey page with near-black surfaces in dark mode. Separation comes from background contrast, then spacing; borders only for tables and explicit dividers.
+  - Buttons and sidebar states are pills. Primary calls to action use the brand `--primary` (black in light, light in dark); the purple accent is reserved for inline links, the active table-of-contents entry, and focus rings.
+  - Typography caps at font weight 600, headings use `letter-spacing: -0.025em`, body text is at least 16 px, Geist Mono is used for eyebrows, badges, and footer meta text.
+  - Landing page: `template: splash` with `hero.tagline` (eyebrow), `hero.title` (headline), page `description` (subtitle), pill actions, `.steps-strip` and `.screenshot-grid` utilities from the theme.
+  - Changing the look means a theme release plus a version bump here, not a docs-local stylesheet.
+
   ## Project Conventions
 
   ### Code Style

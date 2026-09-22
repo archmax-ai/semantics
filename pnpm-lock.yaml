@@ -88,6 +88,9 @@ importers:
 
   apps/docs:
     dependencies:
+      '@archmax-ai/starlight-theme':
+        specifier: github:archmax-ai/starlight-theme#v0.1.1
+        version: https://codeload.github.com/archmax-ai/starlight-theme/tar.gz/4d3b2909d6df24fb78c7b6877200fdefad585ca9(@astrojs/starlight@0.42.0(astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(ioredis@5.11.1)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.0))(typescript@7.0.2))(astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(ioredis@5.11.1)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.0))
       '@astrojs/starlight':
         specifier: ^0.42.0
         version: 0.42.0(astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(ioredis@5.11.1)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.0))(typescript@7.0.2)
@@ -364,6 +367,14 @@ packages:
     peerDependenciesMeta:
       zod:
         optional: true
+
+  '@archmax-ai/starlight-theme@https://codeload.github.com/archmax-ai/starlight-theme/tar.gz/4d3b2909d6df24fb78c7b6877200fdefad585ca9':
+    resolution: {tarball: https://codeload.github.com/archmax-ai/starlight-theme/tar.gz/4d3b2909d6df24fb78c7b6877200fdefad585ca9}
+    version: 0.1.1
+    engines: {node: '>=22'}
+    peerDependencies:
+      '@astrojs/starlight': ^0.42.0
+      astro: ^7.0.0
 
   '@asamuzakjp/css-color@3.2.0':
     resolution: {integrity: sha512-K1A6z8tS3XsmCMM86xoWdn7Fkdn9m6RSVtocUrJYIwZnFVkng/PvkEoWtOWmP+Scc6saYWHWZYbndEEXxl24jw==}
@@ -5541,6 +5552,11 @@ snapshots:
       standardwebhooks: 1.1.1
     optionalDependencies:
       zod: 4.5.4
+
+  '@archmax-ai/starlight-theme@https://codeload.github.com/archmax-ai/starlight-theme/tar.gz/4d3b2909d6df24fb78c7b6877200fdefad585ca9(@astrojs/starlight@0.42.0(astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(ioredis@5.11.1)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.0))(typescript@7.0.2))(astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(ioredis@5.11.1)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.0))':
+    dependencies:
+      '@astrojs/starlight': 0.42.0(astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(ioredis@5.11.1)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.0))(typescript@7.0.2)
+      astro: 7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(ioredis@5.11.1)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.0)
 
   '@asamuzakjp/css-color@3.2.0':
     dependencies:

@@ -9,6 +9,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@archmax-ai/starlight-theme": "github:archmax-ai/starlight-theme#v0.1.1",
     "@astrojs/starlight": "^0.42.0",
     "astro": "^7.3.2",
     "sharp": "^0.35.4",
