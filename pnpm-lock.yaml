@@ -32,10 +32,10 @@ importers:
         version: link:../../packages/core
       '@hono/node-server':
         specifier: ^2.1.1
-        version: 2.1.1(hono@4.13.7)
+        version: 2.1.1(hono@4.13.11)
       '@hono/zod-validator':
         specifier: ^0.9.1
-        version: 0.9.1(hono@4.13.7)(zod@4.5.4)
+        version: 0.9.1(hono@4.13.11)(zod@4.5.4)
       '@langchain/core':
         specifier: ^1.2.9
         version: 1.2.9(@opentelemetry/api@1.9.1)(openai@7.12.1(undici@8.10.2)(ws@8.20.0)(zod@4.5.4))(ws@8.20.0)
@@ -44,7 +44,7 @@ importers:
         version: 1.5.11(@langchain/core@1.2.9(@opentelemetry/api@1.9.1)(openai@7.12.1(undici@8.10.2)(zod@4.5.4)))(undici@8.10.2)
       '@modelcontextprotocol/hono':
         specifier: 2.0.0-alpha.2
-        version: 2.0.0-alpha.2(@modelcontextprotocol/server@2.0.0-beta.5)(hono@4.13.7)
+        version: 2.0.0-alpha.2(@modelcontextprotocol/server@2.0.0-beta.5)(hono@4.13.11)
       '@modelcontextprotocol/server':
         specifier: 2.0.0-beta.5
         version: 2.0.0-beta.5
@@ -58,8 +58,8 @@ importers:
         specifier: ^17.4.2
         version: 17.4.2
       hono:
-        specifier: ^4.13.7
-        version: 4.13.7
+        specifier: ^4.13.11
+        version: 4.13.11
       js-yaml:
         specifier: ^5.2.2
         version: 5.2.2
@@ -138,8 +138,8 @@ importers:
         specifier: ^1.7.3
         version: 1.7.3(@opentelemetry/api@1.9.1)(mongodb@7.6.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(vitest@4.1.10)
       hono:
-        specifier: ^4.13.7
-        version: 4.13.7
+        specifier: ^4.13.11
+        version: 4.13.11
       lucide-react:
         specifier: ^1.43.0
         version: 1.43.0(react@19.2.8)
@@ -3732,8 +3732,8 @@ packages:
   hastscript@9.0.1:
     resolution: {integrity: sha512-g7df9rMFX/SPi34tyGCyUBREQoKkapwdY/T04Qn9TDWfHhAYt4/I0gMVirzK5wEzeUqIjEB+LXC/ypb7Aqno5w==}
 
-  hono@4.13.7:
-    resolution: {integrity: sha512-c8/gF9ac8Y78/agExVocyLevgR+JlpNB444Py0FSX8pJoPdYUfUzRcXtYEYGwt6l19qIlVZPN5Mfsw9jFShmQQ==}
+  hono@4.13.11:
+    resolution: {integrity: sha512-/SMX/RQNJn7oNmFwH6DtwDqcrzZU2otm1FD6OJe2cWF6cfy/F8hq0XVBv7xW3FTJshRQwuBnXHDq2kNsdZnshg==}
     engines: {node: '>=16.9.0'}
 
   html-encoding-sniffer@4.0.0:
@@ -6124,13 +6124,13 @@ snapshots:
 
   '@floating-ui/utils@0.2.12': {}
 
-  '@hono/node-server@2.1.1(hono@4.13.7)':
+  '@hono/node-server@2.1.1(hono@4.13.11)':
     dependencies:
-      hono: 4.13.7
+      hono: 4.13.11
 
-  '@hono/zod-validator@0.9.1(hono@4.13.7)(zod@4.5.4)':
+  '@hono/zod-validator@0.9.1(hono@4.13.11)(zod@4.5.4)':
     dependencies:
-      hono: 4.13.7
+      hono: 4.13.11
       zod: 4.5.4
 
   '@img/colour@1.1.0': {}
@@ -6334,10 +6334,10 @@ snapshots:
     dependencies:
       zod: 4.5.4
 
-  '@modelcontextprotocol/hono@2.0.0-alpha.2(@modelcontextprotocol/server@2.0.0-beta.5)(hono@4.13.7)':
+  '@modelcontextprotocol/hono@2.0.0-alpha.2(@modelcontextprotocol/server@2.0.0-beta.5)(hono@4.13.11)':
     dependencies:
       '@modelcontextprotocol/server': 2.0.0-beta.5
-      hono: 4.13.7
+      hono: 4.13.11
 
   '@modelcontextprotocol/server@2.0.0-beta.5':
     dependencies:
@@ -8766,7 +8766,7 @@ snapshots:
       property-information: 7.2.0
       space-separated-tokens: 2.0.2
 
-  hono@4.13.7: {}
+  hono@4.13.11: {}
 
   html-encoding-sniffer@4.0.0:
     dependencies:

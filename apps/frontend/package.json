@@ -17,7 +17,7 @@
     "@tanstack/react-router": "^1.170.33",
     "@xyflow/react": "^12.11.6",
     "better-auth": "^1.7.3",
-    "hono": "^4.13.7",
+    "hono": "^4.13.11",
     "lucide-react": "^1.43.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

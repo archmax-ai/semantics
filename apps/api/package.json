@@ -27,7 +27,7 @@
     "better-auth": "^1.7.3",
     "deepagents": "^1.13.3",
     "dotenv": "^17.4.2",
-    "hono": "^4.13.7",
+    "hono": "^4.13.11",
     "js-yaml": "^5.2.2",
     "mongodb": "^7.6.0",
     "mongoose": "^9.9.5",
