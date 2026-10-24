@@ -12,7 +12,7 @@
     "@archmax-ai/starlight-theme": "github:archmax-ai/starlight-theme#v0.1.1",
     "@astrojs/starlight": "^0.42.0",
     "astro": "^7.3.2",
-    "sharp": "^0.35.4",
+    "sharp": "^0.35.5",
     "starlight-image-zoom": "^0.16.0"
   },
   "devDependencies": {
