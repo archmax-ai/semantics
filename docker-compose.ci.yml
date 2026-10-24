@@ -110,8 +110,9 @@ services:
   # ── Iceberg (Lakekeeper + MinIO) ──────────────────────────────────
 
   minio:
-    # MinIO no longer publishes to Docker Hub (pulls of minio/minio are denied); quay.io is the supported registry.
-    image: quay.io/minio/minio:latest
+    # MinIO no longer publishes images (minio/minio on Docker Hub and quay.io/minio/minio are both gone);
+    # Chainguard builds upstream MinIO from source and ships `mc`, which the healthcheck needs.
+    image: chainguard/minio:latest
     command: server /data --console-address ":9001"
     environment:
       MINIO_ROOT_USER: minioadmin
