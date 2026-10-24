@@ -31,7 +31,7 @@
     "js-yaml": "^5.2.2",
     "mongodb": "^7.6.0",
     "mongoose": "^9.9.5",
-    "zod": "^4.5.4"
+    "zod": "^4.6.6"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",

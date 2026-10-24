@@ -25,7 +25,7 @@
     "langchain": "^1.5.10",
     "markitdown-ts": "^0.0.10",
     "mongoose": "^9.9.5",
-    "zod": "^4.5.4"
+    "zod": "^4.6.6"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
