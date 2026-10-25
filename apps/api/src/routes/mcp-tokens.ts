@@ -47,7 +47,7 @@ const app = new Hono()
       .lean();
 
     const since = new Date();
-    since.setDate(since.getDate() - 30);
+    since.setUTCDate(since.getUTCDate() - 30);
 
     const counts = await McpCallLog.aggregate<{ _id: mongoose.Types.ObjectId | null; count: number }>([
       {
