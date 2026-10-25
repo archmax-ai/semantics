@@ -39,7 +39,7 @@ async function aggregateCallsByDay(projectId: string, since: Date) {
     const key = cursor.toISOString().slice(0, 10);
     const entry = byDay[key];
     days.push({ date: key, calls: entry?.calls ?? 0, errors: entry?.errors ?? 0 });
-    cursor.setDate(cursor.getDate() + 1);
+    cursor.setUTCDate(cursor.getUTCDate() + 1);
   }
   return days;
 }
@@ -51,7 +51,7 @@ const app = new Hono().get("/", async (c) => {
   const days = Math.min(90, Math.max(1, parseInt(daysParam || "14", 10)));
 
   const since = new Date();
-  since.setDate(since.getDate() - days);
+  since.setUTCDate(since.getUTCDate() - days);
 
   const svc = getFileService();
 

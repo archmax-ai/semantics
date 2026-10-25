@@ -72,4 +72,13 @@ export default defineConfig({
       ],
     }),
   ],
+  vite: {
+    environments: {
+      prerender: {
+        // Starlight imports js-yaml 4's default export; bundling it keeps the
+        // prerender output from resolving the workspace-hoisted js-yaml 5.
+        resolve: { noExternal: ["js-yaml"] },
+      },
+    },
+  },
 });
