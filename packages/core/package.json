@@ -18,7 +18,7 @@
     "@langchain/openai": "^1.6.2",
     "bullmq": "^5.80.9",
     "deepagents": "^1.14.2",
-    "dotenv": "^17.4.2",
+    "dotenv": "^18.0.9",
     "ioredis": "^6",
     "isomorphic-git": "^1.43.2",
     "js-yaml": "^5.4.1",
