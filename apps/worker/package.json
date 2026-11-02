@@ -13,7 +13,7 @@
   "dependencies": {
     "@archmax/core": "workspace:*",
     "@langchain/core": "^1.2.17",
-    "bullmq": "^5.80.9",
+    "bullmq": "^6.5.1",
     "dotenv": "^17.4.2",
     "ioredis": "^6",
     "mongoose": "^9"
