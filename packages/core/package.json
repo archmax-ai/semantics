@@ -16,7 +16,7 @@
     "@langchain/anthropic": "^1.5.12",
     "@langchain/core": "^1.2.17",
     "@langchain/openai": "^1.6.2",
-    "bullmq": "^5.80.9",
+    "bullmq": "^6.5.1",
     "deepagents": "^1.14.2",
     "dotenv": "^17.4.2",
     "ioredis": "^6",
